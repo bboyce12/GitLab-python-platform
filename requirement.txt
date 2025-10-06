@@ -1,0 +1,10 @@
+certifi==2025.7.14
+charset-normalizer==3.4.2
+idna==3.10
+python-dateutil==2.9.0.post0
+python-dotenv==1.1.1
+python-gitlab @ git+https://github.com/python-gitlab/python-gitlab.git@f908f0e82840a5df374e8fbfb1298608d23f02bd
+requests==2.32.4
+requests-toolbelt==1.0.0
+six==1.17.0
+urllib3==2.5.0

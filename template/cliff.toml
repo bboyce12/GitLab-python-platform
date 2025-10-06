@@ -1,0 +1,39 @@
+# A commented configuration file for git-cliff.
+[changelog]
+# The header of the changelog file.
+header = ""
+
+# The body of the changelog.
+# - {{version}} will be replaced with the new version.
+# - {{timestamp}} will be replaced with the release date.
+# - {{previous}} will be a link to the previous version's release.
+# - {{commit_id}} will be the commit ID of the release.
+body = """
+{% if version %}
+    ## [{{ version }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+{% else %}
+    ## [unreleased]
+{% endif %}
+{% for group, commits in commits | group_by(attribute="group") %}
+    ### {{ group | upper_first }}
+    {% for commit in commits %}
+        - {{ commit.message | upper_first }} ([`{{ commit.id | truncate(length=7, end="") }}`]({{ commit.id }}))
+    {% endfor %}
+{% endfor %}
+"""
+
+# Groups your commits based on the prefixes.
+commit_parsers = [
+  { message = "^feat", group = "Features" },
+  { message = "^fix", group = "Bug Fixes" },
+  { message = "^docs", group = "Documentation" },
+  { message = "^style", group = "Styling" },
+  { message = "^refactor", group = "Refactoring" },
+  { message = "^perf", group = "Performance" },
+  { message = "^test", group = "Testing" },
+  { message = "^chore", group = "Chores" },
+  { message = "^build", group = "Build System" },
+]
+
+# Sorts the groups in the final changelog.
+sort_commits = "newest"
