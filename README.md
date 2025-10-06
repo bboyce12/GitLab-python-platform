@@ -1,16 +1,16 @@
-GitLab DevOps Automation & Analytics Tool
+# GitLab DevOps Automation & Analytics Tool
 
 A Python-based desktop application designed to simplify and automate key DevOps processes within GitLab, tailored for small organizations and development teams.
 
 
 
-1. Problem Statement
+# 1. Problem Statement
 
 Small organisations often face significant challenges in adopting DevOps practices due to the complexity, cost, and expertise required to manage traditional, fragmented toolchains (e.g., Jenkins, Docker, Prometheus). This tool aims to lower that barrier by leveraging the integrated GitLab platform and abstracting its powerful API into a user-friendly graphical interface.
 
 
 
-2. Key Features
+# 2. Key Features
 
 The application provides a centralized GUI to manage and analyse the entire DevOps lifecycle within GitLab.
 
@@ -80,7 +80,7 @@ Calculate and display the Average Time to Close Issues.
 
 
 
-3. Technology Stack
+# 3. Technology Stack
 
 Backend: Python 3
 
@@ -98,7 +98,7 @@ Environment Management: python-dotenv
 
 
 
-4. Setup and Installation
+# 4. Setup and Installation
 
 To run this application on your local machine, please follow these steps.
 
@@ -128,19 +128,19 @@ It is highly recommended to use a Python virtual environment to manage dependenc
 
 
 
-# Create the virtual environment
+Create the virtual environment
 
 python3 -m venv venv
 
 
 
-# Activate the virtual environment
+Activate the virtual environment
 
-# On macOS or Linux:
+On macOS or Linux:
 
 source venv/bin/activate
 
-# On Windows:
+On Windows:
 
 .\venv\Scripts\activate
 
@@ -168,25 +168,23 @@ If it is not wokring, add your details: Open the .env file and add the following
 
 
 
-# .env file
+.env file
 
 
 
-# Your GitLab Personal Access Token with 'api' scope
+Your GitLab Personal Access Token with 'api' scope
 
 GITLAB_PRIVATE_TOKEN="glpat-xxxxxxxxxxxxxxxxxxxx"
 
 
-
-# The URL of your GitLab instance
+The URL of your GitLab instance
 
 GITLAB_URL="https://gitlab.com"
 
 
+The ID of a top-level group where you have Owner permissions.
 
-# The ID of a top-level group where you have Owner permissions.
-
-# This will be used as the default parent for creating new groups/projects.
+This will be used as the default parent for creating new groups/projects.
 
 PARENT_GROUP_ID="12345678"
 
@@ -194,7 +192,7 @@ Note: This .env file is included in .gitignore and should never be committed to 
 
 
 
-5. Usage
+# 5. Usage
 
 Once the setup is complete, you can run the application with the following command:
 
@@ -210,6 +208,6 @@ This will launch the Tkinter GUI, which will attempt to connect to GitLab using 
 
 
 
-6. License
+# 6. License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
